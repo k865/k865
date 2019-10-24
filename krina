@@ -1,0 +1,87 @@
+#include<stdio.h>
+
+struct team34
+{
+	
+	char college_id[20];
+	char course_id[20];
+	char student_name[20];
+	char student_contactno[10];
+	char student_address[100];
+	char book_id[20];
+	char book_author[50];
+	char book_publishing_year[4]; 
+	char issue_date[10];
+	char submission_date[10];
+	//char fine[10];
+	
+	
+} l1[3];
+int main(){
+	
+	int i,im,sm,id,sd,total,total1,dif,dif1;
+	
+	
+	for(i=0;i<2;i++){
+	
+	printf("Enter college id: ");
+	scanf("%[^\n]%*c",l1[i].college_id);
+	printf("\nEnter course id: ");
+	scanf("%[^\n]%*c",l1[i].course_id);
+	printf("\nEnter Student name: ");
+	scanf("%[^\n]%*c",l1[i].student_name);
+	printf("\nEtnter Student contact no:");
+	scanf("%[^\n]%*c",l1[i].student_contactno);
+	printf("\nEnter Student address: ");
+	scanf("%[^\n]%*c",l1[i].student_address);
+	printf("\nEnter book id: ");
+	scanf("%[^\n]%*c",l1[i].book_id);
+	printf("\nEnter book authour: ");
+	scanf("%[^\n]%*c",l1[i].book_author);
+	printf("\nEnter book publishing year: ");
+	scanf("%[^\n]%*c",l1[i].book_publishing_year);
+	printf("\nEnter issue date: ");
+	scanf("%[^\n]%*c",l1[i].issue_date);
+	printf("\nEnter submission date: ");
+	scanf("%[^\n]%*c",l1[i].submission_date);
+	}
+	printf("\n");
+	for(i=0;i<2;i++)
+	{
+	printf("\n");
+	printf("\n\n college id is: %s\t",l1[i].college_id);
+	printf("\n course id is: %s\t",l1[i].course_id);
+	printf("\n Student name is: %s\t",l1[i].student_name);
+	printf("\n Student contact no is: %s\t",l1[i].student_contactno);
+	printf("\n Student address is: %s\t",l1[i].student_address);
+	printf("\n book id is: %s\t",l1[i].book_id);
+	printf("\n book authour is: %s\t",l1[i].book_author);
+	printf("\n book publishing year is: %s\t",l1[i].book_publishing_year);
+	printf("\n issue date is: %s\t",l1[i].issue_date);	
+	printf("\n submission date is: %s\t",l1[i].submission_date);
+	printf("\nEnter month of issue date:");
+	scanf("%d\t",&im);
+	printf("\nEnter issue day:");
+	scanf("%d\t",&id);
+	printf("\nEnter month of submission date:");
+	scanf("%d\t",&sm);
+	printf("\nEnter submission day:");
+	scanf("%d\t",&sd);
+  	total=((im-1)*30)+id;
+  	total1=((sm-1)*30)+sd-1;
+  	dif=total1-total;
+  	if(dif>30)
+	  {
+			dif1=dif-30;
+			printf("Your extra days after submission limit is: %d\t.\n",dif1);
+  			printf("You should pay: %dRs. as a fine for late submission.",dif1*5);	
+	  }
+	  
+	  else
+	  {
+	  	printf("You not need to pay anything.");
+	  }
+	
+	}
+	
+}
